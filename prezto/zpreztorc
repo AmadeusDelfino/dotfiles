@@ -1,0 +1,26 @@
+zstyle ':prezto:*:*' color 'yes'
+zstyle ':prezto:load' pmodule \
+  'environment' \
+  'terminal' \
+  'history' \
+  'directory' \
+  'spectrum' \
+  'utility' \
+  'archive' \
+  'git' \
+  'ssh' \
+  'docker' \
+  'tmux' \
+  'completion' \
+  'syntax-highlighting' \
+  'history-substring-search' \
+  'autosuggestions' \
+  'prompt'
+
+zstyle ':prezto:module:ssh:load' identities 'id_rsa'
+zstyle ':prezto:module:terminal' auto-title 'no'
+zstyle ':prezto:module:tmux:auto-start' local 'yes'
+zstyle ':prezto:module:tmux:auto-start' remote 'no'
+zstyle ':prezto:module:autosuggestions' color 'yes'
+zstyle ':prezto:module:prompt' theme 'paradox'
+zstyle ':prezto:module:tmux:auto-start' local 'yes'

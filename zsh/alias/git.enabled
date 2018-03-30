@@ -1,0 +1,5 @@
+alias gita="git commit -a"
+alias gitps="git push"
+alias gitpl="git pull"
+alias gitc="git checkout"
+alias gits="git status"

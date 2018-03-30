@@ -1,0 +1,1 @@
+alias mysql-client="docker run -it arey/mysql-client"

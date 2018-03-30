@@ -1,0 +1,4 @@
+alias php72="docker run -it --rm -v ~/.ssh:/root/.ssh  -w='/var/www/app' -v /home/death:/home/death -v $(pwd -LP):/var/www/app registry.gitlab.com/convenia-docker-images/base/composer/7.2:latest"
+alias php71="docker run -it --rm -v ~/.ssh:/root/.ssh  -w='/var/www/app' -v /home/death:/home/death -v $(pwd -LP):/var/www/app registry.gitlab.com/convenia-docker-images/base/composer/7.1:latest"
+alias php70="docker run -it --rm -v ~/.ssh:/root/.ssh  -w='/var/www/app' -v /home/death:/home/death -v $(pwd -LP):/var/www/app registry.gitlab.com/convenia-docker-images/base/composer/7.0:latest"
+alias php56="docker run -it --rm -v ~/.ssh:/home/php/.ssh -v /home/death:/home/death -v $(pwd):/var/www/html -w='/var/www/html' edbizarro/gitlab-ci-pipeline-php:5.6"

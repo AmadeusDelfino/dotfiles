@@ -1,0 +1,1 @@
+for f in ${ZDOTDIR:-$HOME}/.dotfiles/zsh/alias/*.enabled; do source $f; done

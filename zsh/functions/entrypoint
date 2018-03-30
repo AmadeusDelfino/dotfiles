@@ -1,0 +1,2 @@
+for f in ${ZDOTDIR:-$HOME}/.dotfiles/zsh/functions/*.enabled; do source $f; done
+ 

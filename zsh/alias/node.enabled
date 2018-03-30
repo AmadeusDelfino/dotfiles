@@ -1,0 +1,2 @@
+alias node="docker run -it --rm -w=/home/node/project -v $(pwd):/home/node/project node"
+alias yarn="node yarn"
