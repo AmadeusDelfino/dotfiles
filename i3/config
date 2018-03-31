@@ -15,7 +15,7 @@ floating_modifier $mod
 bindsym $mod+Return exec gnome-terminal
 
 # i3Lock
-bindsym $mod+Shift+a exec i3lock
+bindsym $mod+Shift+a exec ~/.dotfiles/i3/scripts/i3lock.sh
 
 # Feh Wallpaper
 exec --no-startup-id "feh --bg-scale --randomize /home/death/Imagens/Wallpapers"

@@ -1,12 +1,6 @@
-set -g status-interval 1
-
-###
-#
-# Bar position
-#
-###
 set-option -g status-position bottom
 
+set -g status-interval 1
 
 ###
 #
@@ -22,6 +16,8 @@ set -g status-bg colour8
 #
 ###
 set -g window-status-separator " "
+set -g window-status-format "#[fg=colour7,bg=colour8] #W "
+set -g window-status-current-format "#[fg=colour0,bg=colour159,bold] #W "
 
 ###
 #
