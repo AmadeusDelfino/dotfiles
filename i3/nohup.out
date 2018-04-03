@@ -54,3 +54,4 @@ error 3: BadWindow (invalid Window parameter) request 15 minor 0 serial 12956
 error 138: BadRegion request 137 minor 14 serial 37139
 error 138: BadRegion request 137 minor 14 serial 98910
 error 138: BadRegion request 137 minor 14 serial 472754
+polybar|error: Environment var ${MONITOR} does not exist (no fallback set)

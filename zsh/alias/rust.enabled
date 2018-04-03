@@ -1,1 +1,1 @@
-alias rust-cli="docker run -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro --env "USER=$(whoami)" --user "$(id -u)":"$(id -g)" -v /home/death:/home/death -v $(pwd -LP):/usr/src/myapp -w /usr/src/myapp rust"
+alias rust-cli="docker-run rust"
