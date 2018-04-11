@@ -43,4 +43,6 @@ call plug#begin('~/.config/nvim/plugs')
     Plug 'wakatime/vim-wakatime'
     Plug 'editorconfig/editorconfig-vim'
 
+    Plug 'dylanaraps/wal.vim'
+
 call plug#end()

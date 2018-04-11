@@ -20,8 +20,8 @@ bindsym $mod+Shift+a exec ~/.dotfiles/i3/scripts/i3lock.sh
 for_window [class="^.*"] border pixel 0
 
 # Feh Wallpaper
-exec --no-startup-id "feh --bg-scale --randomize /home/death/Imagens/Wallpapers"
-bindsym $mod+Shift+f exec --no-startup-id "feh --bg-scale --randomize /home/death/Imagens/Wallpapers"
+exec --no-startup-id "~/.dotfiles/i3/scripts/wal-and-feh.sh"
+bindsym $mod+Shift+f exec --no-startup-id "~/.dotfiles/i3/scripts/wal-and-feh.sh"
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -30,9 +30,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+h exec --no-startup-id "sh ~/.dotfiles/i3/scripts/hide-polybar.sh"
 
 # Sound controll
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
 
 # Mouse focus disable
 focus_follows_mouse no

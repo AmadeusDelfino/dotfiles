@@ -3,7 +3,7 @@ set cursorline
 set listchars=tab:▸\ ,eol:¬
 
 syntax enable
-colorscheme nord
+colorscheme wal
 
 set number
 set relativenumber

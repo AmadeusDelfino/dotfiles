@@ -1,3 +1,4 @@
+(cat ~/.cache/wal/sequences &)
 # Prezto Initialization
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -11,3 +12,6 @@ source "${ZDOTDIR:-$HOME}/.dotfiles/zsh/exports/entrypoint"
 
 # Import functions
 source "${ZDOTDIR:-$HOME}/.dotfiles/zsh/functions/entrypoint"
+
+# Execute scripts
+source "${ZDOTDIR:-$HOME}/.dotfiles/zsh/scripts/entrypoint"

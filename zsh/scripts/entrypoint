@@ -1,0 +1,1 @@
+for f in ${ZDOTDIR:-$HOME}/.dotfiles/zsh/scripts/*.sh; do source $f; done
