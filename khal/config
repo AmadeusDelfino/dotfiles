@@ -1,0 +1,18 @@
+[calendars]
+
+[[personal]]
+path = /home/death/.dotfiles/khal/calendars/personal
+type = calendar
+color = brown
+
+[[work]]
+path = /home/death/.dotfiles/khal/calendars/work
+type = calendar
+color = brown
+
+[locale]
+timeformat = %H:%M
+dateformat = %d/%m/%Y
+longdateformat = %d/%m/%Y
+datetimeformat = %d/%m/%Y %H:%M
+longdatetimeformat = %d/%m/%Y %H:%M
