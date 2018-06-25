@@ -1,4 +1,5 @@
 alias php72="docker-run registry.gitlab.com/convenia-docker-images/base/composer/7.2:latest"
-alias php71="docker run registry.gitlab.com/convenia-docker-images/base/composer/7.1:latest"
+alias php71="docker-run registry.gitlab.com/convenia-docker-images/base/composer/7.1:latest"
 alias php70="docker-run registry.gitlab.com/convenia-docker-images/base/composer/7.0:latest"
 alias php56="docker run -it --rm -v ~/.ssh:/home/php/.ssh -v /home/death:/home/death -v $(pwd):/var/www/html -w='/var/www/html' edbizarro/gitlab-ci-pipeline-php:5.6"
+alias phpstorm="nohup /home/kerberos/Programas/PhpStorm-181.4445.72/bin/phpstorm.sh &"

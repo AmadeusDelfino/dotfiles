@@ -13,6 +13,6 @@ do
     if xprop -id $bar_id | grep -q "Normal"; then
         xdo hide $bar_id
     else
-        $(sh  /home/death/.dotfiles/polybar/init.sh)
+        $(sh  ~/.dotfiles/polybar/init.sh)
     fi
 done

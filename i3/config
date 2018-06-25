@@ -17,32 +17,32 @@ bindsym $mod+Return exec gnome-terminal
 # i3Lock
 bindsym $mod+Shift+a exec ~/.dotfiles/i3/scripts/i3lock.sh
 # No border to active window
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 2
 
 # Feh Wallpaper
-exec --no-startup-id "~/.dotfiles/i3/scripts/wal-and-feh.sh"
+exec "~/.dotfiles/i3/scripts/wal-and-feh.sh"
 bindsym $mod+Shift+f exec --no-startup-id "~/.dotfiles/i3/scripts/wal-and-feh.sh"
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # Polybar toggle
-bindsym $mod+Shift+h exec --no-startup-id "sh ~/.dotfiles/i3/scripts/hide-polybar.sh"
+bindsym $mod+Shift+y exec --no-startup-id "sh ~/.dotfiles/i3/scripts/hide-polybar.sh"
 
 # Sound controll
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 1 -5%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 1 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id "sh ~/.dotfiles/i3/scripts/sound-turn-up-volume.sh"
+bindsym XF86AudioLowerVolume exec --no-startup-id "sh ~/.dotfiles/i3/scripts/sound-volume-lower.sh"
+bindsym XF86AudioMute exec --no-startup-id "sh ~/.dotfiles/i3/scripts/sound-volume-mute-toggle.sh"
 
 # Mouse focus disable
 focus_follows_mouse no
 
 
 gaps inner 8
-gaps outer 8
+gaps outer 6
 
 # Gnome keeyring start
-exec --no-startup-id "sudo -A sh /home/death/.dotfiles/i3/scripts/start-gnome-keyring.sh"
+# exec --no-startup-id "sudo -A sh /home/death/.dotfiles/i3/scripts/start-gnome-keyring.sh"
 
 # Border hide
 bindsym $mod+y border none
@@ -81,10 +81,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-#bindsym $mod+Shift+j move down
-#bindsym $mod+Shift+k move up
-#bindsym $mod+Shift+l move right
-#bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+bindsym $mod+Shift+h move left
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -181,15 +181,26 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command /home/death/.dotfiles/polybar/init.sh
+        status_command ~/.dotfiles/polybar/init.sh
 }
 
 # Transparency enable
-exec --no-startup-id xcompmgr -c -n
+exec_always compton --config ~/.config/i3/compton.conf
 
 # Touchpad inversel scroll and click on tap
-exec --no-startup-id "/home/death/.dotfiles/i3/scripts/i3-natural-scrolling-and-tap/inverse-scroll.sh"
-exec --no-startup-id "/home/death/.dotfiles/i3/scripts/i3-natural-scrolling-and-tap/tap-to-click.sh"
+exec --no-startup-id "~/.dotfiles/i3/scripts/i3-natural-scrolling-and-tap/inverse-scroll.sh"
+exec --no-startup-id "~/.dotfiles/i3/scripts/i3-natural-scrolling-and-tap/tap-to-click.sh"
 
 #  Keyboard langs
 exec_always --no-startup-id setxkbmap -option 'grp:alt_space_toggle' -layout us,br -variant alt-intl,
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #e00b0b #285577 #ffffff #2e9ef4   #285577
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+ 
+client.background       #ffffff
+
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &

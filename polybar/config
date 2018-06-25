@@ -8,7 +8,8 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:background}
+;background = ${xrdb:background}
+background=#750d0d0d
 background-alt = ${xrdb:background}
 foreground = ${xrdb:foreground}
 foreground-alt = ${xrdb:foreground}
@@ -22,8 +23,6 @@ alert = ${xrdb:color3}
 monitor =  ${env:MONITOR:}
 width = 100%
 height = 22
-;offset-x = 1%
-;offset-y = 1%
 fixed-center = false
 
 background = ${colors.background}
@@ -37,17 +36,11 @@ module-margin-right = 5
 
 font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = Siji:pixelsize=14
+font-2 = Siji:pixelsize=12;1
 
 modules-left = i3
 modules-center =
 modules-right = backlight volume xkeyboard wlan battery date
-
-tray-position = right
-tray-padding = 2
-tray-transparent = false
-tray-background = ${colors.background}
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize

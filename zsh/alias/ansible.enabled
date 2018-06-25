@@ -1,3 +1,3 @@
-alias ansible="docker-run williamyeh/ansible:ubuntu16.04 ansible"
-alias ansible-vault="docker-run williamyeh/ansible:ubuntu16.04 ansible-vault"
-alias ansible-cmd="docker-run williamyeh/ansible:ubuntu16.04 bash"
+alias ansible="docker-run-default-user williamyeh/ansible:centos7 ansible"
+alias ansible-vault="docker-run-default-user williamyeh/ansible:centos7 ansible-vault"
+alias ansible-cmd="docker-run-default-user williamyeh/ansible:centos7 bash"

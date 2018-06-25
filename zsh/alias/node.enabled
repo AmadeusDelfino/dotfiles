@@ -1,2 +1,2 @@
-alias node="docker-run node"
-alias yarn="node yarn"
+alias node-docker="docker-run node"
+alias yarn-docker="node-docker yarn"

@@ -1,0 +1,2 @@
+alias phpstorm="nohup /home/kerberos/Programas/PhpStorm-181.4445.72/bin/phpstorm.sh &"
+alias datagrip="nohup /home/kerberos/Programas/DataGrip-2018.1.2/bin/datagrip.sh &"

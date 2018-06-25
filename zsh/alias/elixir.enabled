@@ -1,0 +1,1 @@
+alias elixir="docker-run bitwalker/alpine-elixir-phoenix"

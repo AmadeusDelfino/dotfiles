@@ -1,1 +1,2 @@
 alias docker-run='docker run -it -v /etc/group:/etc/group:ro -v /etc/passwd:/etc/passwd:ro --env "USER=$(whoami)" --user "$(id -u)":"$(id -g)" -v /home/kerberos:/home/kerberos -v `pwd`:/tmp/myapp -w /tmp/myapp'
+alias docker-run-default-user='docker run -it -v /home/kerberos:/root -v `pwd`:/tmp/myapp -w /tmp/myapp'
