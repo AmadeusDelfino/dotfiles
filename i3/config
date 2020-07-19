@@ -20,7 +20,6 @@ bindsym $mod+Shift+a exec ~/.dotfiles/i3/scripts/i3lock.sh
 for_window [class="^.*"] border pixel 2
 
 # Feh Wallpaper
-exec "~/.dotfiles/i3/scripts/wal-and-feh.sh"
 bindsym $mod+Shift+f exec --no-startup-id "~/.dotfiles/i3/scripts/wal-and-feh.sh"
 
 # kill focused window
@@ -30,9 +29,9 @@ bindsym $mod+Shift+q kill
 bindsym $mod+Shift+y exec --no-startup-id "sh ~/.dotfiles/i3/scripts/hide-polybar.sh"
 
 # Sound controll
-bindsym XF86AudioRaiseVolume exec --no-startup-id "sh ~/.dotfiles/i3/scripts/sound-turn-up-volume.sh"
-bindsym XF86AudioLowerVolume exec --no-startup-id "sh ~/.dotfiles/i3/scripts/sound-volume-lower.sh"
-bindsym XF86AudioMute exec --no-startup-id "sh ~/.dotfiles/i3/scripts/sound-volume-mute-toggle.sh"
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 
 # Mouse focus disable
 focus_follows_mouse no
@@ -58,10 +57,10 @@ bindsym $mod+Control+l exec --no-startup-id "i3-msg move workspace to output lef
 bindsym $mod+Control+h exec --no-startup-id "i3-msg move workspace to output right"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec light -U 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5  # decrease screen brightness
 # start menus
-bindsym $mod+d exec "rofi -combi-modi window,drun,run -show combi -modi combi"
+#bindsym $mod+d exec "rofi -combi-modi window,drun,run -show combi -modi combi"
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -174,15 +173,16 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+bindsym $mod+Tab workspace back_and_forth
+
 bindsym $mod+r mode "resize"
 
 # kill fuck bar of i3
 # exec --no-startup-id pkill i3bar
 # Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-bar {
-        status_command ~/.dotfiles/polybar/init.sh
-}
+# finds out, if available)R
+
+
 
 # Transparency enable
 exec_always compton --config ~/.config/i3/compton.conf
@@ -192,7 +192,7 @@ exec --no-startup-id "~/.dotfiles/i3/scripts/i3-natural-scrolling-and-tap/invers
 exec --no-startup-id "~/.dotfiles/i3/scripts/i3-natural-scrolling-and-tap/tap-to-click.sh"
 
 #  Keyboard langs
-exec_always --no-startup-id setxkbmap -option 'grp:alt_space_toggle' -layout us,br -variant alt-intl,
+exec_always --no-startup-id setxkbmap -option 'grp:alt_space_toggle' -layout br,usr -variant alt-intl,
 
 # class                 border  backgr. text    indicator child_border
 client.focused          #e00b0b #285577 #ffffff #2e9ef4   #285577
@@ -203,4 +203,14 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
  
 client.background       #ffffff
 
-exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
+exec --no-startup-id albert
+exec --no-startup-id xset +fp /home/amadeus/.fonts
+exec --no-startup-id xset fp rehash
+exec --no-startup-id wal -R
+exec --no-startup-id gnome-session
+
+bar {
+    i3bar_command $HOME/.dotfiles/polybar/init.sh
+}
+
