@@ -2,7 +2,7 @@ unbind C-b
 set -g prefix C-q
 
 unbind %
-bind / split-window -h -c '#{pane_current_path}'
+bind ] split-window -h -c '#{pane_current_path}'
 bind - split-window -v -c '#{pane_current_path}'
 
 bind -n M-h select-pane -L

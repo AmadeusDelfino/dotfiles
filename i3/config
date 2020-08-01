@@ -12,7 +12,7 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 
 # i3Lock
 bindsym $mod+Shift+a exec ~/.dotfiles/i3/scripts/i3lock.sh
@@ -149,6 +149,8 @@ bindsym $mod+Shift+r exec "pkill polybar && i3-msg restart"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+p exec "i3-msg exit"
 
+bindsym $mod+Shift+v exec xrandr --output HDMI1 --auto --right-of eDP1
+
 # resize window (you can also use the mouse for that)
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
@@ -208,9 +210,23 @@ exec --no-startup-id albert
 exec --no-startup-id xset +fp /home/amadeus/.fonts
 exec --no-startup-id xset fp rehash
 exec --no-startup-id wal -R
-exec --no-startup-id gnome-session
+#exec --no-startup-id gnome-session
+exec --no-startup-id mpd
+#bar {
+    #verbose yes
+    #i3bar_command $HOME/.dotfiles/polybar/init.sh
+#}
+exec_always --no-startup-id "$HOME/.dotfiles/polybar/init.sh"
 
-bar {
-    i3bar_command $HOME/.dotfiles/polybar/init.sh
-}
+exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 
+################# i3-radius #######################
+smart_borders on
+smart_borders no_gaps
+border_radius 5
+
+# Remove border
+for_window [class="^.*"] border pixel 0
+
+# floats
+for_window [class="Gnome-calculator" instance="gnome-calculator"] floating enable
