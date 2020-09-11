@@ -10,6 +10,6 @@
 
 
 ### Default panel
-set-option -g pane-border-fg colour240
+#set-option -g pane-border-fg colour240
 
 set -g pane-active-border-style "bg=default fg=colour4"

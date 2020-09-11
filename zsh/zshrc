@@ -18,4 +18,4 @@ source "${ZDOTDIR:-$HOME}/.dotfiles/zsh/scripts/entrypoint"
 export NVM_DIR="/home/amadeus/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-cat ~/.cache/wal/sequences
+source ~/.dotfiles/alacritty/pywal.sh
