@@ -37,9 +37,6 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ to
 focus_follows_mouse no
 
 
-gaps inner 8
-gaps outer 6
-
 # Gnome keeyring start
 # exec --no-startup-id "sudo -A sh /home/death/.dotfiles/i3/scripts/start-gnome-keyring.sh"
 
@@ -145,7 +142,7 @@ bindsym $mod+Shift+0 move container to workspace 10
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 # bindsym $mod+Shift+r restart
-bindsym $mod+Shift+r exec "pkill polybar && i3-msg restart"
+bindsym $mod+Shift+r exec "i3-msg restart"
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+p exec "i3-msg exit"
 
@@ -179,17 +176,10 @@ bindsym $mod+Tab workspace back_and_forth
 
 bindsym $mod+r mode "resize"
 
-# kill fuck bar of i3
-# exec --no-startup-id pkill i3bar
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)R
-
-
-
 # Transparency enable
 exec_always compton --config ~/.config/i3/compton.conf
 
-# Touchpad inversel scroll and click on tap
+# Touchpad inverse scroll and click on tap
 exec --no-startup-id "~/.dotfiles/i3/scripts/i3-natural-scrolling-and-tap/inverse-scroll.sh"
 exec --no-startup-id "~/.dotfiles/i3/scripts/i3-natural-scrolling-and-tap/tap-to-click.sh"
 
@@ -211,12 +201,6 @@ exec --no-startup-id ulauncher
 exec --no-startup-id xset +fp /home/amadeus/.fonts
 exec --no-startup-id xset fp rehash
 exec --no-startup-id wal -R
-#exec --no-startup-id gnome-session
-exec --no-startup-id mpd
-#bar {
-    #verbose yes
-    #i3bar_command $HOME/.dotfiles/polybar/init.sh
-#}
 exec_always --no-startup-id "$HOME/.dotfiles/polybar/init.sh"
 
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
@@ -224,7 +208,10 @@ exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 ################# i3-radius #######################
 smart_borders on
 smart_borders no_gaps
+gaps inner 10
+gaps outer 0
 border_radius 3
+hide_edge_borders smart_no_gaps
 
 # Remove border
 for_window [class="^.*"] border pixel 0
