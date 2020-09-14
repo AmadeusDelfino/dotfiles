@@ -15,7 +15,5 @@ source "${ZDOTDIR:-$HOME}/.dotfiles/zsh/functions/entrypoint"
 # Execute scripts
 source "${ZDOTDIR:-$HOME}/.dotfiles/zsh/scripts/entrypoint"
 
-export NVM_DIR="/home/amadeus/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-source ~/.dotfiles/alacritty/pywal.sh
+#source ~/.dotfiles/alacritty/pywal.sh

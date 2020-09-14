@@ -57,8 +57,8 @@ bindsym $mod+Control+l exec --no-startup-id "i3-msg move workspace to output lef
 bindsym $mod+Control+h exec --no-startup-id "i3-msg move workspace to output right"
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec brightlight -i 500 # increase screen brightness
-bindsym XF86MonBrightnessDown exec brightlight -d 500  # decrease screen brightness
+bindsym XF86MonBrightnessUp exec brightnessctl set +10% # increase screen brightness
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-  # decrease screen brightness
 # start menus
 #bindsym $mod+d exec albert
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
@@ -222,8 +222,9 @@ exec_always --no-startup-id "$HOME/.dotfiles/polybar/init.sh"
 exec --no-startup-id dunst -config $HOME/.config/dunst/dunstrc
 
 ################# i3-radius #######################
-#smart_borders on
-#smart_borders no_gaps
+smart_borders on
+smart_borders no_gaps
+border_radius 3
 
 # Remove border
 for_window [class="^.*"] border pixel 0

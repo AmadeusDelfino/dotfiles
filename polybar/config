@@ -20,7 +20,7 @@ margin-top = 0
 margin-bottom = 0
 
 [bar/top]
-monitor = ${env:MONITOR:}
+#monitor = ${env:MONITOR:}
 enable-ipc = true
 width = 100%
 height = 24
@@ -32,7 +32,7 @@ line-color = ${colors.linecolor}
 underline-size = 1
 overline-size = 2
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 module-margin-left = 1
 module-margin-right = 1
@@ -42,7 +42,7 @@ font-1 = Siji:pixelsize=45;1
 font-2 = unifont:size=15;1
 
 modules-left = i3 xwindow
-modules-right = xkeyboard backlight volume wifi battery memory cpu date
+modules-right = backlight volume date
 
 tray-position = center
 tray-padding = 2
@@ -59,27 +59,14 @@ bspwm-focused-underline = #cc333333
 
 [bar/bottom]
 inherit = bar/top
-
-enable-ipc = true
 bottom = true
 
-underline-size = ${bar/top.overline-size}
-overline-size = ${bar/top.underline-size}
-
-modules-left = bspwm i3 xwindow
+modules-left =
 modules-center =
-modules-right = github volume fs-root battery date power-menu
+modules-right = fs-root battery wifi memory cpu
 
-wm-restack = ${bar/top.wm-restack}
-
-tray-position = none
-tray-padding = 2
-tray-background = ${colors.background}
-tray-maxsize = 10
-
-# bar/module specific vars
-bspwm-focused-overline = #cc333333
-bspwm-focused-underline = ${colors.linecolor}
+wm-restack =
+override-redirect = false
 
 [module/battery]
 type = internal/battery
@@ -107,7 +94,7 @@ animation-charging-framerate = 750
 [module/fs-root]
 type = internal/fs
 mount-0 = /
-label-mounted = %{F#e60053}%percentage_used%%%{F-} used of %mountpoint%
+label-mounted = %percentage_used%% used of %mountpoint%
 
 [module/bspwm]
 type = internal/bspwm
@@ -175,7 +162,7 @@ wrapping-scroll = true
 format = <label-state> <label-mode>
 
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = 3
 label-mode-background = ${colors.accent}
 
 label-focused = %index%
@@ -200,7 +187,7 @@ type = internal/cpu
 interval = 0.5
 label = %percentage%% 
 format-prefix = " "
-format-prefix-foreground = #666
+format-prefix-foreground = ${colors.foreground-alt}
 
 format =  <ramp-coreload>
 ramp-coreload-0 = ▁
@@ -232,50 +219,43 @@ click-left = gnome-system-monitor
 
 [module/memory]
 type = internal/memory
-interval = 1
+interval = 0.5
 label = %percentage_used%%
 format-prefix = " "
-format-prefix-foreground = #666
+format-prefix-foreground = ${colors.foreground-alt}
 
 [module/wifi]
 type = internal/network
 interface = wlp3s0
-interval = 3.0
+interval = 0.5
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-prefix = " "
-format-connected-prefix-foreground = #666
+;format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
 format-connected-prefix-offset = -6
-label-connected = %downspeed:8%
+label-connected = %essid% %downspeed:8%
 
-;format-disconnected = <label-disconnected>
-;format-disconnected-prefix = " "
-;format-disconnected-prefix-foreground = #666
-;label-disconnected = not connected
-;label-disconnected-foreground = #999
+format-disconnected = <label-disconnected>
+;format-disconnected-prefix = " "
+format-disconnected-prefix-foreground = ${colors.foreground-alt}
+label-disconnected = not connected
+label-disconnected-foreground = #999
 
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = #666
-
-[module/wired]
-type = internal/network
-interface = net0
-interval = 3.0
-
-format-connected-prefix = " "
-format-connected-prefix-foreground = #666
-label-connected = %local_ip%
+ramp-signal-foreground = ${colors.foreground}
 
 [module/date]
 type = internal/date
-label = %{F#666}%{F-} %date%  %{F#e60053}%{F-} %time%
+label =  %date% %time%
 date = %d/%m/%Y
 time = %H:%M:%S
 interval = 1
+label-foreground = ${colors.foreground-alt}
+format-foreground = ${colors.foreground-alt}
 
 [module/backlight]
 type = internal/backlight
@@ -285,8 +265,8 @@ format = <ramp> <label>
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
-ramp-foreground = #666
-label-foreground = ${root.foreground}
+ramp-foreground = ${colors.foreground-alt}
+label-foreground = ${colors.foreground-alt}
 
 [module/volume]
 type = internal/alsa
@@ -295,21 +275,21 @@ headphone-id = 9
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
-label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${colors.foreground-alt}
 
 format-muted-prefix = " "
-format-muted-foreground = #777
+format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
-ramp-volume-foreground = #666
+ramp-volume-foreground = ${colors.foreground-alt}
 
 ramp-headphones-0 = 
 ramp-headphones-1 = 
-ramp-headphones-foreground = #666
+ramp-headphones-foreground = ${colors.foreground-alt}
 
 [module/mpd]
 type = internal/mpd
