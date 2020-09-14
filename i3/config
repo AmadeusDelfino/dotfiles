@@ -60,7 +60,7 @@ bindsym $mod+Control+h exec --no-startup-id "i3-msg move workspace to output rig
 bindsym XF86MonBrightnessUp exec brightnessctl set +10% # increase screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-  # decrease screen brightness
 # start menus
-#bindsym $mod+d exec albert
+#bindsym $mod+d exec albert ulauncher
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -207,7 +207,7 @@ client.background       #ffffff
 
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 & eval $(gnome-keyring-daemon -s --components=pkcs11,secrets,ssh,gpg) &
-exec --no-startup-id albert
+exec --no-startup-id ulauncher
 exec --no-startup-id xset +fp /home/amadeus/.fonts
 exec --no-startup-id xset fp rehash
 exec --no-startup-id wal -R
