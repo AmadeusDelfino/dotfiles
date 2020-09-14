@@ -34,8 +34,8 @@ overline-size = 2
 
 padding-left = 2
 padding-right = 2
-module-margin-left = 1
-module-margin-right = 1
+module-margin-left = 5
+module-margin-right = 5
 
 font-0 = NotoSans-Regular:pixelsize=12;1
 font-1 = Siji:pixelsize=45;1
@@ -60,7 +60,7 @@ bspwm-focused-underline = #cc333333
 [bar/bottom]
 inherit = bar/top
 bottom = true
-
+module-padding = 10
 modules-left =
 modules-center =
 modules-right = fs-root battery wifi memory cpu
@@ -158,7 +158,8 @@ type = internal/i3
 index-sort = true
 pin-workspaces = true
 wrapping-scroll = true
-
+margin-left = 0
+margin-right = 0
 format = <label-state> <label-mode>
 
 label-mode = %mode%
@@ -339,6 +340,8 @@ label-indicator-background = ${colors.accent}
 type = internal/xwindow
 format = <label>
 label-maxlen = 75
+margin-left = 0
+margin-right = 0
 
 [module/counter]
 type = internal/counter
