@@ -1,6 +1,5 @@
 unbind C-b
 set -g prefix C-q
-
 unbind %
 bind ] split-window -h -c '#{pane_current_path}'
 bind - split-window -v -c '#{pane_current_path}'
@@ -18,3 +17,5 @@ bind -n M-C-j resize-pane -D 5
 bind -n M-C-k resize-pane -U 5
 bind -n M-C-l resize-pane -R 5
 
+
+bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"

@@ -3,7 +3,7 @@ set -g escape-time 10
 set-option -g renumber-windows on
 set-option -g default-terminal "screen-256color"
 set -g default-shell /usr/bin/zsh
-
+set -ga terminal-overrides ',*256color*:smcup@:rmcup@'
 
 # Set the name of the window initially, but then don't let tmux change it.
 # The name can still be set at any time with Ctrl+B + ,
