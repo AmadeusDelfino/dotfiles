@@ -1,12 +1,12 @@
 [calendars]
 
 [[personal]]
-path = /home/death/.dotfiles/khal/calendars/personal
+path = /home/amadeus/.dotfiles/khal/calendars/personal
 type = calendar
 color = brown
 
 [[work]]
-path = /home/death/.dotfiles/khal/calendars/work
+path = /home/amadeus/.dotfiles/khal/calendars/work
 type = calendar
 color = brown
 

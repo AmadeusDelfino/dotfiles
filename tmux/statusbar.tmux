@@ -45,4 +45,4 @@ setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244
 #setw -g window-status-bell-fg colour255
 #setw -g window-status-bell-bg colour1
 
-set -g status-bg colour3
+set -g status-bg default

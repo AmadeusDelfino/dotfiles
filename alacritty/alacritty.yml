@@ -81,10 +81,10 @@
   # Set this to `None` to use the default theme variant.
   #gtk_theme_variant: None
 
-#scrolling:
+scrolling:
   # Maximum number of lines in the scrollback buffer.
   # Specifying '0' will disable scrolling.
-  #history: 10000
+  history: 0
 
   # Scrolling distance multiplier.
   #multiplier: 3
@@ -381,7 +381,7 @@ background_opacity: 0.8
 # Send ESC (\x1b) before characters when alt is pressed.
 #alt_send_esc: true
 
-#mouse:
+mouse:
   # Click settings
   #
   # The `double_click` and `triple_click` settings control the time
@@ -391,7 +391,7 @@ background_opacity: 0.8
   #triple_click: { threshold: 300 }
 
   # If this is `true`, the cursor is temporarily hidden when typing.
-  #hide_when_typing: false
+  hide_when_typing: true
 
   #url:
     # URL launcher
@@ -445,7 +445,7 @@ background_opacity: 0.8
 # Key bindings are specified as a list of objects. For example, this is the
 # default paste binding:
 #
-# `- { key: V, mods: Control|Shift, action: Paste }`
+# :`- { key: V, mods: Control|Shift, action: Paste }`
 #
 # Each key binding will specify a:
 #
@@ -695,3 +695,31 @@ background_opacity: 0.8
 
   # Print all received window events.
   #print_events: false
+# BEGIN ACE
+colors:
+  primary:
+    background: '0x06062E'
+    foreground: '0xadcdd2'
+  cursor:
+    text:       '0x06062E'
+    cursor:     '0xadcdd2'
+  normal:
+    black:      '0x06062E'
+    red:        '0xA7556C'
+    green:      '0xD79C2F'
+    yellow:     '0xCD8C52'
+    blue:       '0xB3CA59'
+    magenta:    '0x3A2EA2'
+    cyan:       '0xC556AA'
+    white:      '0xadcdd2'
+  bright:
+    black:      '0x798f93'
+    red:        '0xA7556C'
+    green:      '0xD79C2F'
+    yellow:     '0xCD8C52'
+    blue:       '0xB3CA59'
+    magenta:    '0x3A2EA2'
+    cyan:       '0xC556AA'
+    white:      '0xadcdd2'
+
+# END ACE
