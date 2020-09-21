@@ -33,6 +33,8 @@
   - libpcre++-dev
   - libcairo2-dev
   - libsdl-pango-dev
-
+  - libev-dev
+  - libstartup-notification0-dev
+  - libxcb-cursor-dev
 ## Controle de luminosidade do monitor
   Utilizando o brightnessctl é necessário executar o seguinte comando: `sudo gpasswd -a <usuario> video`
