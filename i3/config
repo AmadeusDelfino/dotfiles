@@ -12,12 +12,12 @@ font pango:DejaVu Sans Mono 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id  alacritty
 
 # i3Lock
 bindsym $mod+Shift+a exec ~/.dotfiles/i3/scripts/i3lock.sh
 # No border to active window
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 0
 
 # Feh Wallpaper
 bindsym $mod+Shift+f exec --no-startup-id "~/.dotfiles/i3/scripts/wal-and-feh.sh"

@@ -313,7 +313,7 @@ scrolling:
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 0.8
-
+background_blur: true
 #selection:
   #semantic_escape_chars: ",│`|:\"' ()[]{}<>\t"
 
@@ -698,28 +698,28 @@ mouse:
 # BEGIN ACE
 colors:
   primary:
-    background: '0x06062E'
-    foreground: '0xadcdd2'
+    background: '0x233c3a'
+    foreground: '0xf1eee0'
   cursor:
-    text:       '0x06062E'
-    cursor:     '0xadcdd2'
+    text:       '0x233c3a'
+    cursor:     '0xf1eee0'
   normal:
-    black:      '0x06062E'
-    red:        '0xA7556C'
-    green:      '0xD79C2F'
-    yellow:     '0xCD8C52'
-    blue:       '0xB3CA59'
-    magenta:    '0x3A2EA2'
-    cyan:       '0xC556AA'
-    white:      '0xadcdd2'
+    black:      '0x233c3a'
+    red:        '0xF4CD6C'
+    green:      '0x7B69A3'
+    yellow:     '0x64A7AF'
+    blue:       '0x5FA9C2'
+    magenta:    '0xD3BDA7'
+    cyan:       '0x9CD1DE'
+    white:      '0xf1eee0'
   bright:
-    black:      '0x798f93'
-    red:        '0xA7556C'
-    green:      '0xD79C2F'
-    yellow:     '0xCD8C52'
-    blue:       '0xB3CA59'
-    magenta:    '0x3A2EA2'
-    cyan:       '0xC556AA'
-    white:      '0xadcdd2'
+    black:      '0xa8a69c'
+    red:        '0xF4CD6C'
+    green:      '0x7B69A3'
+    yellow:     '0x64A7AF'
+    blue:       '0x5FA9C2'
+    magenta:    '0xD3BDA7'
+    cyan:       '0x9CD1DE'
+    white:      '0xf1eee0'
 
 # END ACE
