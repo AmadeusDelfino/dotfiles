@@ -61,12 +61,19 @@ bspwm-focused-underline = #cc333333
 inherit = bar/top
 bottom = true
 module-padding = 10
-modules-left =
+modules-left = spotify
 modules-center =
 modules-right = fs-root battery wifi memory cpu
 
 wm-restack =
 override-redirect = false
+
+[module/spotify]
+type = custom/script
+interval = 0.1
+format-prefix = " "
+format = <label>
+exec = python $PWD/.dotfiles/polybar/polybar-spotify/spotify_status.py -t 100 -f '{play_pause} {artist}: {song}'
 
 [module/battery]
 type = internal/battery
@@ -227,7 +234,7 @@ format-prefix-foreground = ${colors.foreground-alt}
 
 [module/wifi]
 type = internal/network
-interface = wlp3s0
+interface = wlp0s20f3
 interval = 0.5
 
 format-connected = <ramp-signal> <label-connected>
