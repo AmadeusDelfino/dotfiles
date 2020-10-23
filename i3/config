@@ -56,6 +56,13 @@ bindsym $mod+Control+h exec --no-startup-id "i3-msg move workspace to output rig
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec brightnessctl set +10% # increase screen brightness
 bindsym XF86MonBrightnessDown exec brightnessctl set 10%-  # decrease screen brightness
+
+#Mediakeys
+bindsym XF86AudioPlay exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+bindsym XF86AudioStop exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop"
+bindsym XF86AudioPrev exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+bindsym XF86AudioNext exec "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
 # start menus
 #bindsym $mod+d exec albert ulauncher
 bindsym $mod+Shift+d exec --no-startup-id i3-dmenu-desktop
@@ -177,7 +184,7 @@ bindsym $mod+Tab workspace back_and_forth
 bindsym $mod+r mode "resize"
 
 # Transparency enable
-exec_always compton --config ~/.config/i3/compton.conf
+exec_always compton --config ~/.config/compton/compton.conf
 
 # Touchpad inverse scroll and click on tap
 exec --no-startup-id "~/.dotfiles/i3/scripts/i3-natural-scrolling-and-tap/inverse-scroll.sh"
